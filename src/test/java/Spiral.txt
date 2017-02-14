@@ -1,0 +1,46 @@
+species: spiral
+memsize: 12
+defense: 1
+offense: 1
+size: 1
+energy: 10000
+posture: 17
+
+ahead[1] < -1 --> eat;
+
+mem[8] = 0 and mem[10] < mem[9] --> mem[10] := mem[10] + 1
+                                    forward;
+mem[8] = 0 and mem[10] = mem[9] --> mem[8] := mem[8] + 1
+                                    mem[10] := 0
+                                    right;
+
+mem[8] = 1 and mem[10] < mem[9] + 1 --> mem[10] := mem[10] + 1
+                                        forward;
+mem[8] = 1 and mem[10] = mem[9] + 1 --> mem[8] := mem[8] + 1
+                                        mem[10] := 0
+                                        right;
+                                        
+mem[8] = 2 and mem[10] < mem[9] + 1 --> mem[10] := mem[10] + 1
+                                        forward;
+mem[8] = 2 and mem[10] = mem[9] + 1 --> mem[8] := mem[8] + 1
+                                        mem[10] := 0
+                                        right;
+                                        
+mem[8] = 3 and mem[10] < mem[9] + 1 --> mem[10] := mem[10] + 1
+                                        forward;
+mem[8] = 3 and mem[10] = mem[9] + 1 --> mem[8] := mem[8] + 1
+                                        mem[10] := 0
+                                        right;
+                                        
+mem[8] = 4 and mem[10] < mem[9] + 1 --> mem[10] := mem[10] + 1
+                                        forward;
+mem[8] = 4 and mem[10] = mem[9] + 1 --> mem[8] := mem[8] + 1
+                                        mem[10] := 0
+                                        right;
+                                        
+mem[8] = 5 and mem[10] < mem[9] + 2 --> mem[10] := mem[10] + 1
+                                        forward;
+mem[8] = 5 and mem[10] = mem[9] + 2 --> mem[8] := 0
+                                        mem[9] := mem[9] + 1
+                                        mem[10] := 0
+                                        right;

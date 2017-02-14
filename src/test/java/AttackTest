@@ -1,0 +1,9 @@
+name attack world
+size 10 10
+
+critter critter 1 1 0
+critter critter 1 2 3
+critter critter 2 3 0
+critter critter 2 4 3
+critter critter 5 5 0
+critter critter 5 6 3

@@ -1,0 +1,4 @@
+name Spiral world
+size 30 30
+
+critter Spiral.txt 15 15 0

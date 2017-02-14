@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="ap" minHeight="400.0" minWidth="400.0" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.SimulationGUI.WorldGUI">
+   <children>
+      <BorderPane fx:id="MainBorderPane" minHeight="400.0" minWidth="400.0" prefHeight="500.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="443.0" prefWidth="165.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="461.0" prefWidth="166.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox maxHeight="43.0" maxWidth="167.0" minHeight="40.0" minWidth="139.0" prefHeight="40.0" prefWidth="166.0">
+                                 <children>
+                                    <Button fx:id="start" mnemonicParsing="false" onAction="#startAction" prefHeight="30.0" prefWidth="75.0">
+                                       <HBox.margin>
+                                          <Insets left="6.0" top="2.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox fx:id="StartButtonHBox" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Text fill="#00c936" strokeType="OUTSIDE" strokeWidth="0.0" text="Start">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="6.0" top="1.0" />
+                                                   </HBox.margin>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                       </graphic></Button>
+                                    <Button fx:id="stop" mnemonicParsing="false" onAction="#stopAction" prefHeight="30.0" prefWidth="75.0">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <HBox fx:id="StopButtonHBox" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Stop">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="6.0" top="1.0" />
+                                                   </HBox.margin>
+                                                </Text>
+                                             </children>
+                                          </HBox>
+                                       </graphic></Button>
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Set the World Speed" textAlignment="CENTER" wrappingWidth="164.74462890625">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Text>
+                              <ScrollBar fx:id="velocityBar" VBox.vgrow="ALWAYS">
+                                 <cursor>
+                                    <Cursor fx:constant="E_RESIZE" />
+                                 </cursor></ScrollBar>
+                              <HBox maxHeight="29.0" maxWidth="165.0" minHeight="29.0" minWidth="165.0" prefHeight="29.0" prefWidth="165.0">
+                                 <children>
+                                    <TextField fx:id="stepVelocity" prefHeight="26.0" prefWidth="75.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="3.0" />
+                                       </HBox.margin></TextField>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="steps/s">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="3.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0" />
+                              <Separator prefWidth="200.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="World Speed on Server" textAlignment="CENTER" wrappingWidth="164.74462890625" />
+                              <HBox maxHeight="29.0" maxWidth="165.0" minHeight="29.0" minWidth="165.0" prefHeight="29.0" prefWidth="165.0">
+                                 <children>
+                                    <JFXTextField fx:id="ServerStepVelocity" editable="false" maxWidth="88.0" minWidth="81.0" prefHeight="33.0" prefWidth="81.0">
+                                       <HBox.margin>
+                                          <Insets left="4.0" />
+                                       </HBox.margin>
+                                    </JFXTextField>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="steps/s">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="3.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="2.0" />
+                                 </VBox.margin></Separator>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Advance World by Step" textAlignment="CENTER" wrappingWidth="164.74462890625" />
+                              <HBox maxHeight="31.0" maxWidth="166.0" minHeight="31.0" minWidth="166.0" prefHeight="31.0" prefWidth="166.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Button fx:id="advance" mnemonicParsing="false" onAction="#advanceAction" prefHeight="26.0" prefWidth="77.0" text="advance">
+                                       <HBox.margin>
+                                          <Insets left="2.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <TextField fx:id="advanceSteps" prefHeight="26.0" prefWidth="45.0">
+                                       <HBox.margin>
+                                          <Insets left="3.0" top="1.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="steps" textAlignment="CENTER" wrappingWidth="44.6806640625" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="1.0" top="5.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <TabPane fx:id="GeneralTabPane" prefHeight="334.0" prefWidth="168.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                 <tabs>
+                                    <Tab fx:id="WorldTab" closable="false" text="World">
+                                       <content>
+                                          <AnchorPane minHeight="200.0" minWidth="167.0" prefHeight="293.0" prefWidth="167.0">
+                                             <children>
+                                                <VBox prefHeight="289.0" prefWidth="165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WORLD INFO" textAlignment="CENTER" wrappingWidth="170.353515625" VBox.vgrow="ALWAYS">
+                                                         <font>
+                                                            <Font size="21.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                                      <HBox prefHeight="37.0" prefWidth="171.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="6.0" top="6.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <JFXTextField fx:id="WorldName" editable="false" prefHeight="26.0" prefWidth="99.0">
+                                                               <HBox.margin>
+                                                                  <Insets top="6.0" />
+                                                               </HBox.margin>
+                                                            </JFXTextField>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="37.0" prefWidth="171.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Size:">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="6.0" top="6.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <JFXTextField fx:id="WorldSize" editable="false" prefHeight="26.0" prefWidth="99.0">
+                                                               <HBox.margin>
+                                                                  <Insets left="15.0" />
+                                                               </HBox.margin>
+                                                            </JFXTextField>
+                                                         </children>
+                                                      </HBox>
+                                                      <Separator prefWidth="200.0" />
+                                                      <HBox prefHeight="37.0" prefWidth="171.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Steps Taken:">
+                                                               <font>
+                                                                  <Font size="17.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="6.0" top="8.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <JFXTextField fx:id="StepsTaken" editable="false" prefHeight="26.0" prefWidth="55.0">
+                                                               <HBox.margin>
+                                                                  <Insets top="6.0" />
+                                                               </HBox.margin>
+                                                            </JFXTextField>
+                                                         </children>
+                                                      </HBox>
+                                                      <HBox prefHeight="37.0" prefWidth="171.0">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Critter Num:">
+                                                               <font>
+                                                                  <Font size="17.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="6.0" top="8.0" />
+                                                               </HBox.margin>
+                                                            </Text>
+                                                            <JFXTextField fx:id="CritterNum" editable="false" prefHeight="26.0" prefWidth="55.0">
+                                                               <HBox.margin>
+                                                                  <Insets left="6.0" top="6.0" />
+                                                               </HBox.margin>
+                                                            </JFXTextField>
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="HexTab" closable="false" text="Hex">
+                                       <content>
+                                          <AnchorPane minHeight="200.0" minWidth="167.0" prefHeight="223.0" prefWidth="167.0">
+                                             <children>
+                                                <VBox fx:id="HexInfoBox" prefHeight="302.0" prefWidth="169.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HEX INFO" textAlignment="CENTER" wrappingWidth="170.99267578125" VBox.vgrow="ALWAYS">
+                                                         <font>
+                                                            <Font size="21.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="RulesTab" closable="false" text="Rules">
+                                       <content>
+                                          <AnchorPane minHeight="200.0" minWidth="167.0" prefHeight="293.0" prefWidth="167.0">
+                                             <children>
+                                                <VBox layoutX="1.0" prefHeight="302.0" prefWidth="167.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CRITTER RULES" translateX="3.0">
+                                                         <font>
+                                                            <Font size="21.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Separator prefWidth="200.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Rule:" textAlignment="CENTER" wrappingWidth="166.27392578125">
+                                                         <font>
+                                                            <Font size="19.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <JFXTextArea fx:id="LastRule" editable="false" maxWidth="167.0" minHeight="50.0" minWidth="161.0" prefHeight="50.0" prefWidth="167.0">
+                                                         <font>
+                                                            <Font size="8.0" />
+                                                         </font></JFXTextArea>
+                                                      <Separator prefWidth="200.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Critter Program:" textAlignment="CENTER" wrappingWidth="168.19580078125">
+                                                         <font>
+                                                            <Font size="19.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <JFXTextArea fx:id="CritterProgram" editable="false" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                         <font>
+                                                            <Font size="8.0" />
+                                                         </font></JFXTextArea>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TabPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="NewRandomWorld" mnemonicParsing="false" onAction="#NewRandomWorldAction" text="New Random World" />
+                        <MenuItem fx:id="LoadWorld" mnemonicParsing="false" text="Load World" />
+                        <MenuItem fx:id="LoadCritter" mnemonicParsing="false" text="Load Critters" />
+                        <MenuItem fx:id="LoadCritterWithLocation" mnemonicParsing="false" text="Load Critter with Location" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeAction" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="World Action">
+                     <items>
+                        <MenuItem fx:id="RemoveCritter" mnemonicParsing="false" onAction="#RemoveCritterAction" text="Remove Critter" />
+                        <MenuItem fx:id="CreateCritter" mnemonicParsing="false" onAction="#CreateCritterAction" text="Create Critter" />
+                        <MenuItem fx:id="CreateFood" mnemonicParsing="false" onAction="#CreateFoodAction" text="Create Food" />
+                        <MenuItem fx:id="CreateRock" mnemonicParsing="false" onAction="#CreateRockAction" text="Create Rock" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem fx:id="UserGuide" mnemonicParsing="false" onAction="#UserGuideAction" text="User's Guide" />
+                        <MenuItem fx:id="about" mnemonicParsing="false" onAction="#aboutAction" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTabPane prefHeight="471.0" prefWidth="484.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                      <Tab text="World Display">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane fx:id="WorldPane" prefHeight="460.0" prefWidth="478.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox>
+                                             <children>
+                                                <JFXButton fx:id="NewRandomWorldButton" onAction="#NewRandomWorldAction" prefHeight="216.0" prefWidth="481.0" ripplerFill="#04ff007f" text="New Random World">
+                                                   <font>
+                                                      <Font size="35.0" />
+                                                   </font>
+                                                </JFXButton>
+                                                <Separator prefWidth="200.0" />
+                                                <JFXButton fx:id="LoadWorldButton" onAction="#LoadWorldAction" prefHeight="216.0" prefWidth="481.0" ripplerFill="#ff000080" text="Load World">
+                                                   <font>
+                                                      <Font size="35.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Critter List">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ScrollPane prefViewportHeight="441.0" prefViewportWidth="484.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox fx:id="CritterListVBox" prefHeight="439.0" prefWidth="482.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="460.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <AnchorPane prefHeight="100.0" prefWidth="650.0">
+               <children>
+                  <VBox layoutX="73.0" layoutY="-76.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text fill="#da0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message:">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <JFXTextArea fx:id="ErrorMessageArea" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

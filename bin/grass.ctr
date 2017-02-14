@@ -1,0 +1,10 @@
+species: grass
+memsize: 9
+defense: 1
+offense: 1
+size: 1
+energy: 500
+posture: 0
+
+ahead[1] < -1 --> eat;
+1 = 1 --> serve [100];

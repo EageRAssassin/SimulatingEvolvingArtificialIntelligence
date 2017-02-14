@@ -1,0 +1,9 @@
+species: grow and die
+memsize: 9
+defense: 5
+offense: 10
+size: 5
+energy: 1600
+posture: 0
+
+1=1 --> grow;

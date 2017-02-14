@@ -1,0 +1,2 @@
+mem[1] + 2 > 3 and ahead[4] > -(5 mod 6) --> mem[2] := 18
+						 bud;

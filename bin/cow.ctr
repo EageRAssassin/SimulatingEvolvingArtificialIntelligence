@@ -1,0 +1,12 @@
+species: cow
+memsize: 9
+defense: 1
+offense: 1
+size: 1
+energy: 500
+posture: 0
+
+nearby[0] = -1 --> left;
+nearby[1] = -1 --> right;
+ahead[2] = -1 --> forward;
+1 = 1 --> wait;

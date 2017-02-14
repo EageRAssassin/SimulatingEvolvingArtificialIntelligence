@@ -1,0 +1,15 @@
+ahead[1] >= mem[ahead[nearby[-4]]] --> mem[random[1]] := -nearby[11]
+mem[1] := 1
+mem[nearby[nearby[1]]] := 1
+mem[1] := ahead[1]
+mem[1] := ahead[1]
+mem[1] := ahead[1]
+left;
+
+1 >= mem[-1] --> mem[nearby[1]] := mem[-11]
+mem[nearby[1]] := mem[1]
+mem[1] := smell
+mem[nearby[1]] := mem[1]
+mem[nearby[1]] := mem[22]
+mem[smell] := nearby[1]
+backward;

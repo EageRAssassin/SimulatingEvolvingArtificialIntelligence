@@ -1,0 +1,3 @@
+mem[4] = 150 --> wait; //POSTURE starts from 0
+POSTURE = 15 --> wait; //if POSTURE is 15, stop the interpreter
+mem[1] = 1 --> POSTURE := POSTURE + 1; //let POSTURE increases by 1 each round

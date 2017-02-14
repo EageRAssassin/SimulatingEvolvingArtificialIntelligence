@@ -1,0 +1,13 @@
+species: SmellTest
+memsize: 8
+defense: 1
+offense: 1
+size: 1
+energy: 300
+posture: 17
+
+ahead[1] < -1 --> eat;
+
+smell < 1000000 and smell mod 10 != 0 --> left;
+
+smell < 1000000 and smell mod 10 = 0 --> forward;

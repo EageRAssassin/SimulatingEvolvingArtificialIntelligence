@@ -1,0 +1,9 @@
+name mate world
+size 10 10
+
+critter mate.ctr 2 3 0
+critter mate.ctr 2 4 3
+critter mate.ctr 6 7 0
+critter mate.ctr 6 8 3
+critter mate.ctr 9 4 0
+critter mate.ctr 9 3 3
