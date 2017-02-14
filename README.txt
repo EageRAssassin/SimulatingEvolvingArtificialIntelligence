@@ -1,0 +1,2 @@
+This is my class project name Simulating Evolving Artificial Intelligence with my Partner Andrew. Here are the features
+• Use Java language to create a hexagonal world with simulated critters• The whole project includes Parsing, Fault Injection, Interpretation and Simulation, GUI design, Distributed and Concurrent Programming.• The final project comprises both client-side code that is a regular JavaFX application and server- side code that runs within a web server, which can communicate and synchronize with each other through HTTP requests and JSON communication
